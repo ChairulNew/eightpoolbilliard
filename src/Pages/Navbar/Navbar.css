@@ -1,0 +1,328 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 20px;
+  z-index: 99999;
+  height: 95px;
+  color: black;
+}
+
+.logo {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.logo-navbar {
+  width: 156px;
+  height: auto;
+}
+
+.navbar.visible {
+  position: fixed;
+  background: transparent !important;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-1);
+  z-index: 999;
+}
+
+.navbar .box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .nav_tabs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end;
+  flex: 2;
+  position: relative;
+}
+
+.dropdown_tab {
+  position: relative;
+}
+
+.dropdown_tab > p::after {
+  content: "▼";
+  font-size: 10px;
+  margin-left: 5px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav_tabs .tab,
+.navbar .nav_tabs .tab p,
+.navbar .icon_tab,
+.navbar .dropdown_tab p,
+.navbar .menu_btn,
+.navbar .cancel_btn {
+  color: black;
+  fill: black;
+}
+
+.navbar .menu_btn svg,
+.navbar .cancel_btn svg {
+  color: black !important;
+}
+
+.navbar .nav_tabs .tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.navbar .nav_tabs .tab p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.navbar .nav_tabs .tab p::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.navbar .nav_tabs .tab:hover p::after {
+  transform: scaleX(1);
+}
+
+.navbar .nav_tabs .tab:hover p {
+  color: black;
+}
+
+.navbar.visible .nav_tabs .tab {
+  color: black;
+}
+
+.navbar .nav_tabs .tab.active {
+  color: black;
+  background: var(--gradient-1);
+}
+
+.navbar .nav_tabs .tab.active p::after {
+  background-color: black;
+  transform: scaleX(1);
+}
+
+.navbar .cancel_btn,
+.navbar .menu_btn {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.sidebar_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: transparent !important;
+  display: none;
+}
+
+.sidebar_overlay.active {
+  display: block;
+}
+
+.dropdown_menu {
+  position: fixed;
+  top: 95px;
+  left: 0;
+  width: 100%;
+  background-color: transparent !important;
+  padding: 15px 40px;
+  border-radius: 0;
+  z-index: 400;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: none;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  overflow-x: hidden;
+}
+.dropdown_tab::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 20px;
+  background: transparent;
+  z-index: 399;
+  display: none;
+}
+
+@media (min-width: 1001px) {
+  .dropdown_tab:hover::before {
+    display: block;
+  }
+
+  .dropdown_tab:hover .dropdown_menu,
+  .dropdown_menu.show {
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: var(--shadow-1);
+  }
+
+  .dropdown_tab:hover > p::after,
+  .dropdown_tab .dropdown_menu.show ~ p::after {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown_item {
+  color: black !important;
+  padding: 8px 0;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar .nav_tabs {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    min-height: 100vh;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    background: black;
+    transition: left 0.3s ease;
+    z-index: 350;
+    padding: 20px;
+    padding-top: 60px;
+    overflow-y: auto;
+  }
+
+  .navbar .nav_tabs.open {
+    left: 0;
+  }
+
+  .navbar .nav_tabs .tab {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 0;
+  }
+
+  .navbar .nav_tabs .tab,
+  .navbar .nav_tabs .tab p,
+  .navbar .icon_tab,
+  .navbar .dropdown_tab p {
+    color: black !important;
+  }
+
+  .dropdown_tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown_tab > p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .dropdown_tab > p::after {
+    display: none;
+  }
+
+  .navbar .menu_btn,
+  .navbar .cancel_btn {
+    display: flex;
+    color: black !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar .menu_btn svg,
+  .navbar .cancel_btn svg {
+    color: black !important;
+  }
+
+  .navbar .nav_tabs .tab::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .dropdown_menu {
+    position: static !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 0 0 15px !important;
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    box-shadow: none !important;
+    grid-template-columns: 1fr !important;
+    gap: 5px !important;
+    background-color: transparent !important;
+    max-height: none !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+  }
+
+  .cancel_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .dropdown_tab::before {
+    display: none !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 10px;
+    height: 80px;
+  }
+
+  .logo-navbar {
+    width: 130px;
+  }
+
+  .navbar .contact_btn {
+    display: none;
+  }
+
+  .dropdown_menu {
+    top: 80px;
+  }
+}
