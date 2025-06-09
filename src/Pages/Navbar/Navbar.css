@@ -1,5 +1,6 @@
 .navbar {
   width: 100%;
+  background-color: white !important;
   display: flex;
   position: sticky;
   align-items: center;
@@ -9,6 +10,7 @@
   z-index: 99999;
   height: 95px;
   color: black;
+  transition: all 0.3s ease; /* Add smooth transition */
 }
 
 .logo {
@@ -30,6 +32,22 @@
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-1);
   z-index: 999;
+}
+
+/* Change text color to white when navbar is visible/scrolled */
+.navbar.visible .nav_tabs .tab,
+.navbar.visible .nav_tabs .tab p,
+.navbar.visible .icon_tab,
+.navbar.visible .dropdown_tab p,
+.navbar.visible .menu_btn,
+.navbar.visible .cancel_btn {
+  color: white !important;
+  fill: white !important;
+}
+
+.navbar.visible .menu_btn svg,
+.navbar.visible .cancel_btn svg {
+  color: white !important;
 }
 
 .navbar .box {
@@ -67,11 +85,13 @@
 .navbar .cancel_btn {
   color: black;
   fill: black;
+  transition: color 0.3s ease, fill 0.3s ease; /* Add smooth color transition */
 }
 
 .navbar .menu_btn svg,
 .navbar .cancel_btn svg {
   color: black !important;
+  transition: color 0.3s ease; /* Add smooth color transition */
 }
 
 .navbar .nav_tabs .tab {
@@ -98,8 +118,13 @@
   background-color: blue;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: -1;
+}
+
+/* Change underline color to white when navbar is visible */
+.navbar.visible .nav_tabs .tab p::after {
+  background-color: white;
 }
 
 .navbar .nav_tabs .tab:hover p::after {
@@ -110,8 +135,13 @@
   color: black;
 }
 
+/* Ensure hover state works correctly when navbar is visible */
+.navbar.visible .nav_tabs .tab:hover p {
+  color: white;
+}
+
 .navbar.visible .nav_tabs .tab {
-  color: black;
+  color: white;
 }
 
 .navbar .nav_tabs .tab.active {
@@ -119,8 +149,19 @@
   background: var(--gradient-1);
 }
 
+/* Active state when navbar is visible */
+.navbar.visible .nav_tabs .tab.active {
+  color: white;
+}
+
 .navbar .nav_tabs .tab.active p::after {
   background-color: black;
+  transform: scaleX(1);
+}
+
+/* Active state underline when navbar is visible */
+.navbar.visible .nav_tabs .tab.active p::after {
+  background-color: white;
   transform: scaleX(1);
 }
 
@@ -166,6 +207,7 @@
   transition: opacity 0.3s ease, box-shadow 0.3s ease;
   overflow-x: hidden;
 }
+
 .dropdown_tab::before {
   content: "";
   position: absolute;
@@ -176,6 +218,42 @@
   background: transparent;
   z-index: 399;
   display: none;
+}
+
+/* Dropdown items color when navbar is visible */
+.navbar.visible .dropdown_item {
+  color: white !important;
+}
+
+@media (max-width: 1000px) {
+  .dropdown_menu {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: transparent !important;
+    padding: 10px 0;
+    box-shadow: none;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .dropdown_tab:hover .dropdown_menu {
+    box-shadow: none;
+  }
+
+  .dropdown_tab::before {
+    display: none;
+  }
+
+  .dropdown_menu.show {
+    display: flex !important;
+  }
+
+  .dropdown_item {
+    padding: 10px 15px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1001px) {
@@ -199,6 +277,7 @@
 .dropdown_item {
   color: black !important;
   padding: 8px 0;
+  transition: color 0.3s ease; /* Add smooth color transition */
 }
 
 @media (max-width: 1000px) {
@@ -207,6 +286,7 @@
   }
 
   .navbar .nav_tabs {
+    color: whitesmoke;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -219,7 +299,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 20px;
-    background: black;
+    background-image: url(../../assets//bg-web.jpg);
     transition: left 0.3s ease;
     z-index: 350;
     padding: 20px;
@@ -241,7 +321,7 @@
   .navbar .nav_tabs .tab p,
   .navbar .icon_tab,
   .navbar .dropdown_tab p {
-    color: black !important;
+    color: white !important;
   }
 
   .dropdown_tab {
@@ -303,6 +383,7 @@
     top: 20px;
     right: 20px;
   }
+
   .dropdown_tab::before {
     display: none !important;
   }

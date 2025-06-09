@@ -15,11 +15,15 @@ const Header = () => {
   return (
     <section id="header">
       <div className="header-wrap">
-        <div className="slogan-text-wrap">
-          <h1 className="title-heading">SUNSET OF MIND</h1>
-          <button className="btn_title" onClick={handleScrollToSection}>
+        <div className="slogan-text-wrap" style={{ marginTop: -100 }}>
+          <h1 className="title-heading">8POOL</h1>
+
+          <h1 className="title-heading" style={{ color: "yellow" }}>
+            BILLIARD
+          </h1>
+          {/* <button className="btn_title" onClick={handleScrollToSection}>
             Click for more information
-          </button>
+          </button> */}
         </div>
         <video
           src={VideoHeader}

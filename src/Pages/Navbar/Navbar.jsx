@@ -159,6 +159,11 @@ const Navbar = () => {
                 className="tab dropdown_tab"
                 onMouseEnter={handleDropdownMouseEnter}
                 onMouseLeave={handleDropdownMouseLeave}
+                onClick={() => {
+                  if (window.innerWidth <= 1000) {
+                    setDropdownOpen(!dropdownOpen);
+                  }
+                }}
               >
                 <p>{tab.name}</p>
                 <div className={`dropdown_menu ${dropdownOpen ? "show" : ""}`}>
