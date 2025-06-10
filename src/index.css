@@ -39,6 +39,7 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) transparent;
+  /* overflow-x: hidden; */
 }
 html,
 body {

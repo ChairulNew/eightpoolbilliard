@@ -5,8 +5,8 @@ import "./Navbar.css";
 import Logo from "../../assets/logo.png";
 import { FaTimes, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { RiMenu3Fill } from "react-icons/ri";
-import { navData } from "../../../data";
-import { ourMenuItems } from "../../../data";
+import { navData } from "../../data.js";
+import { ourMenuItems } from "../../data.js";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
