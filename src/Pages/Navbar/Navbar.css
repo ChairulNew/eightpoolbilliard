@@ -227,6 +227,7 @@
 
 @media (max-width: 1000px) {
   .dropdown_menu {
+    color: white !important;
     position: static;
     display: flex;
     flex-direction: column;
@@ -275,7 +276,7 @@
 }
 
 .dropdown_item {
-  color: black !important;
+  color: white !important;
   padding: 8px 0;
   transition: color 0.3s ease; /* Add smooth color transition */
 }
@@ -346,14 +347,14 @@
   .navbar .menu_btn,
   .navbar .cancel_btn {
     display: flex;
-    color: black !important;
+    color: white !important;
     align-items: center;
     justify-content: center;
   }
 
   .navbar .menu_btn svg,
   .navbar .cancel_btn svg {
-    color: black !important;
+    color: yellow !important;
   }
 
   .navbar .nav_tabs .tab::after {

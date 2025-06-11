@@ -10,11 +10,17 @@ import ourPromoBall2 from "../../assets/our-promo2.png";
 // import card2Image from "../../assets/card2.png";
 // import card3Image from "../../assets/card3.png";
 
+import stickBall from "../../assets/stick-ball.png";
+
+import "./Section.css";
+
 import yellowBall from "../../assets/yellow-ball.png";
 import redRightBall from "../../assets/red-right-ball.png";
 
 import { testimonial } from "../../data.js";
 import LogoFooter from "../../assets/logo.png";
+
+import gapBottom from "../../assets/gap.png";
 
 // library swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -132,7 +138,6 @@ const SectionMain = () => {
     );
   };
 
-  // Data dinamis untuk card
   const cardData = [
     {
       id: 1,
@@ -200,7 +205,7 @@ const SectionMain = () => {
         }
 
         .swiper-pagination-custom .swiper-pagination-bullet-active {
-          background: #ffd700;
+          background: yellow;
           transform: scale(1.3);
         }
 
@@ -236,11 +241,16 @@ const SectionMain = () => {
             width: "100%",
           }}
         >
-          <div className="left-section">
-            <img src={rsvpLogo} alt="" />
+          <div className="left-section rsvp-img">
+            <img src={rsvpLogo} alt="" className="rsvp-img" />
           </div>
-          <div className="riht-section">
-            <img src={rightBall} alt="" style={{ objectFit: "contain" }} />
+          <div className="right-section">
+            <img
+              src={rightBall}
+              alt=""
+              style={{ objectFit: "contain" }}
+              className="right-ball-top"
+            />
           </div>
         </div>
 
@@ -275,6 +285,7 @@ const SectionMain = () => {
                   objectFit: "contain",
                   display: "inline-block",
                 }}
+                className="blue-ball-top"
               />
               <h2
                 style={{
@@ -302,26 +313,13 @@ const SectionMain = () => {
             </div>
           </div>
 
-          <div
-            className="riht-section"
-            style={{ width: "50%", marginRight: -100 }}
-          >
-            <div>
+          <div className="right-section" style={{ width: "50%" }}>
+            <div className="red-ball-center">
               <img
-                src={stick}
+                src={stickBall}
                 alt=""
-                style={{ objectFit: "contain", marginRight: -300 }}
-              />
-              <img
-                src={redBall}
-                alt=""
-                style={{
-                  marginTop: -200,
-                  marginLeft: 250,
-                  objectFit: "contain",
-                  width: 177,
-                  height: 177,
-                }}
+                style={{ objectFit: "contain", width: 350, marginLeft: 290 }}
+                className="red-ball-center-img"
               />
             </div>
           </div>
@@ -329,7 +327,7 @@ const SectionMain = () => {
 
         {/* Noble Game Section */}
         <div className="wrap-section" style={{ marginTop: 99 }}>
-          <div className="right-section" style={{ paddingRight: 55 }}>
+          <div className="right-section">
             <h1
               style={{
                 marginBottom: 22,
@@ -398,7 +396,7 @@ const SectionMain = () => {
         </div>
 
         <div
-          className="wrap-section"
+          className="wrap-section wrap-section-card"
           style={{
             display: "flex",
             flexDirection: "row",
@@ -700,13 +698,18 @@ const SectionMain = () => {
             <label htmlFor="" style={{ fontSize: 24 }}>
               FEEDBACK :
             </label>
-            <hr
+            <input
               style={{
-                width: "75%",
+                width: "60%",
+                flex: 1,
+                background: "transparent",
+                border: "none",
+                borderBottom: "2px solid white",
                 color: "white",
-                borderTop: "2px solid white",
-                minWidth: 300,
-                marginLeft: 180,
+                padding: "8px 0",
+                marginLeft: 20,
+                outline: "none",
+                fontSize: 16,
                 marginBottom: 50,
               }}
             />
@@ -866,7 +869,19 @@ const SectionMain = () => {
                 <FaInstagram />
               </div>
             </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.815666852555!2d98.6451431!3d3.5772154999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fed625b2493%3A0xc23df6a616b93f95!2sKINI%20SOCIAL%20CLUB!5e1!3m2!1sid!2sid!4v1749574487369!5m2!1sid!2sid"
+              referrerPolicy="no-referrer"
+              style={{
+                border: "none",
+                width: "40%",
+                height: "300px",
+              }}
+            ></iframe>
           </div>
+        </div>
+        <div className="gap-wrapper">
+          <img src={gapBottom} alt="gap" className="gap-img" />
         </div>
       </section>
     </>

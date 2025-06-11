@@ -1,4 +1,645 @@
-#section-main {
-  background-image: url(../../assets/bg-web.jpg);
-  height: 500px;
+/* ==================== TABLET LANDSCAPE (768px - 991px) ==================== */
+@media (max-width: 991px) {
+  /* Header section */
+  .wrap-section:first-child {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  .swiper-button-next-custom,
+  .swiper-button-prev-custom {
+    display: none !important;
+  }
+
+  .left-section img,
+  .right-section img {
+    max-width: 150px !important;
+    height: auto !important;
+  }
+
+  /* Welcome section - stack vertically */
+  .wrap-section:nth-child(2) {
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+
+  .wrap-section:nth-child(2) .left-section {
+    width: 100% !important;
+    margin-bottom: 40px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section {
+    width: 100% !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+  }
+
+  .wrap-section:nth-child(2) h2 {
+    font-size: 40px !important;
+  }
+
+  .wrap-section:nth-child(2) p {
+    font-size: 20px !important;
+  }
+
+  /* Blue ball image */
+  .wrap-section:nth-child(2) .left-section img[src*="blue-ball"] {
+    width: 120px !important;
+    height: 120px !important;
+    margin-left: 0 !important;
+  }
+
+  /* Stick and red ball positioning */
+  .wrap-section:nth-child(2) .right-section img[src*="stik"] {
+    margin-right: -100px !important;
+    max-width: 300px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="red-ball"] {
+    width: 120px !important;
+    height: 120px !important;
+    margin-top: -100px !important;
+    margin-left: 150px !important;
+  }
+
+  /* Noble game section */
+  .wrap-section:nth-child(3) {
+    text-align: center !important;
+    padding-right: 20px !important;
+  }
+
+  .wrap-section:nth-child(3) h1 {
+    font-size: 38px !important;
+    text-align: center !important;
+  }
+
+  .wrap-section:nth-child(3) p {
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+
+  /* Promo section */
+  .wrap-section.our-promo {
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+
+  .wrap-section.our-promo img {
+    width: 120px !important;
+    height: 114px !important;
+  }
+
+  .wrap-section.our-promo h2 {
+    font-size: 30px !important;
+  }
+
+  /* Cards section */
+  .wrap-section:nth-child(6) {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  .wrap-section:nth-child(6) > div {
+    max-width: 500px !important;
+    width: 100% !important;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 500px !important;
+    height: 350px !important;
+  }
+}
+
+/* ==================== TABLET PORTRAIT (576px - 767px) ==================== */
+@media (max-width: 767px) {
+  .wrap-section {
+    padding: 0 15px !important;
+  }
+  /* Header images smaller */
+  .left-section img,
+  .right-section img {
+    max-width: 120px !important;
+  }
+
+  /* Welcome section */
+  .wrap-section:nth-child(2) h2 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+
+  .wrap-section:nth-child(2) p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  .wrap-section:nth-child(2) .left-section img[src*="blue-ball"] {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="stik"] {
+    max-width: 250px !important;
+    margin-right: -50px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="red-ball"] {
+    width: 100px !important;
+    height: 100px !important;
+    margin-top: -80px !important;
+    margin-left: 120px !important;
+  }
+
+  /* Noble game section */
+  .wrap-section:nth-child(3) h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  .wrap-section:nth-child(3) p {
+    font-size: 16px !important;
+  }
+
+  /* Promo section */
+  .wrap-section.our-promo img {
+    width: 100px !important;
+    height: 95px !important;
+  }
+
+  .wrap-section.our-promo h2 {
+    font-size: 26px !important;
+  }
+
+  .wrap-section.our-promo span {
+    font-size: 18px !important;
+  }
+
+  /* Cards */
+  .card {
+    height: 320px !important;
+  }
+
+  .card h3 {
+    font-size: 20px !important;
+  }
+
+  .card p {
+    font-size: 14px !important;
+  }
+
+  /* Comments section */
+  .wrap-section:nth-child(7) h1 {
+    font-size: 26px !important;
+    margin-top: 100px !important;
+  }
+
+  /* Testimonial cards in swiper */
+  .TestimonialCard {
+    max-width: 280px !important;
+    min-height: 280px !important;
+    padding: 24px !important;
+  }
+
+  /* Decorative balls */
+  .wrap-section:nth-child(8) img,
+  .wrap-section:nth-child(9) img {
+    width: 120px !important;
+    height: auto !important;
+  }
+
+  /* Feedback form */
+  .wrap-section:nth-child(10) {
+    padding: 30px 15px !important;
+  }
+
+  .wrap-section:nth-child(10) form {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .wrap-section:nth-child(10) label:first-child {
+    font-size: 20px !important;
+  }
+
+  .wrap-section:nth-child(10) input:first-of-type {
+    width: 70% !important;
+    margin-left: 10px !important;
+    font-size: 14px !important;
+  }
+
+  /* Form groups - stack vertically */
+  .wrap-section:nth-child(10) div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .wrap-section:nth-child(10) label {
+    min-width: auto !important;
+  }
+
+  .wrap-section:nth-child(10) input[type="text"],
+  .wrap-section:nth-child(10) input[type="email"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+    font-size: 14px !important;
+  }
+
+  /* Footer */
+  .wrap-section-footer {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .left-footer {
+    width: 100% !important;
+  }
+
+  .wrap-section:nth-child(10) iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+/* ==================== MOBILE LARGE (481px - 575px) ==================== */
+@media (max-width: 575px) {
+  /* testimonial card styling */
+  .TestimonialCard {
+    width: 450px;
+    height: auto;
+  }
+  /* Welcome section */
+  .wrap-section:nth-child(2) h2 {
+    font-size: 28px !important;
+  }
+
+  .wrap-section:nth-child(2) p {
+    font-size: 15px !important;
+  }
+
+  .wrap-section:nth-child(2) .left-section img[src*="blue-ball"] {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="stik"] {
+    max-width: 200px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="red-ball"] {
+    width: 80px !important;
+    height: 80px !important;
+    margin-top: -60px !important;
+    margin-left: 100px !important;
+  }
+  .red-ball-center {
+    display: flex;
+    flex-direction: row;
+  }
+  .red-ball-center {
+    display: flex;
+    flex-direction: row;
+    margin-right: -20px;
+    justify-content: flex-end;
+  }
+  /* Noble game */
+  .wrap-section:nth-child(3) h1 {
+    font-size: 24px !important;
+  }
+
+  .wrap-section:nth-child(3) p {
+    font-size: 14px !important;
+  }
+
+  /* Promo */
+  .wrap-section.our-promo img {
+    width: 80px !important;
+    height: 76px !important;
+  }
+
+  .wrap-section.our-promo h2 {
+    font-size: 22px !important;
+  }
+
+  .wrap-section.our-promo span {
+    font-size: 16px !important;
+  }
+
+  /* Cards */
+  .card {
+    height: 300px !important;
+  }
+
+  .card h3 {
+    font-size: 18px !important;
+  }
+
+  .card p {
+    font-size: 13px !important;
+  }
+
+  /* Buttons */
+  button[style*="backgroundColor"] {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* Comments */
+  .wrap-section:nth-child(7) h1 {
+    font-size: 22px !important;
+  }
+
+  .TestimonialCard {
+    max-width: 260px !important;
+    min-height: 260px !important;
+    padding: 20px !important;
+  }
+
+  /* Decorative balls */
+  .wrap-section:nth-child(8) img,
+  .wrap-section:nth-child(9) img {
+    width: 100px !important;
+  }
+}
+
+/* ==================== MOBILE SMALL (320px - 480px) ==================== */
+@media (max-width: 480px) {
+  .TestimonialCard {
+    width: 250px;
+    margin-left: -40px !important;
+  }
+
+  .wrap-section-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .wrap-section {
+    padding: 0 10px !important;
+  }
+  .rsvp-img {
+    margin-left: -10px;
+  }
+
+  /* Header */
+  .left-section img,
+  .right-section img {
+    max-width: 100px !important;
+  }
+  .right-ball-top {
+    width: 150px;
+  }
+  /* Welcome section */
+  .wrap-section:nth-child(2) h2 {
+    font-size: 24px !important;
+  }
+
+  .wrap-section:nth-child(2) p {
+    font-size: 13px !important;
+  }
+
+  .wrap-section:nth-child(2) .left-section img[src*="blue-ball"] {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="stik"] {
+    max-width: 150px !important;
+  }
+
+  .wrap-section:nth-child(2) .right-section img[src*="red-ball"] {
+    width: 70px !important;
+    height: 70px !important;
+    margin-top: -50px !important;
+    margin-left: 80px !important;
+  }
+
+  /* Noble game */
+  .wrap-section:nth-child(3) h1 {
+    font-size: 20px !important;
+  }
+
+  .wrap-section:nth-child(3) p {
+    font-size: 13px !important;
+  }
+
+  /* Promo */
+  .wrap-section.our-promo img {
+    width: 70px !important;
+    height: 66px !important;
+  }
+
+  .wrap-section.our-promo h2 {
+    font-size: 20px !important;
+  }
+
+  .wrap-section.our-promo span {
+    font-size: 14px !important;
+  }
+
+  /* Cards */
+  .card {
+    height: 280px !important;
+  }
+
+  .card div[style*="padding: 20px"] {
+    padding: 12px !important;
+  }
+
+  .card h3 {
+    font-size: 16px !important;
+  }
+
+  .card p {
+    font-size: 12px !important;
+  }
+
+  /* Buttons */
+  button[style*="backgroundColor"] {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+  }
+
+  /* Comments */
+  .wrap-section:nth-child(7) h1 {
+    font-size: 20px !important;
+    margin-top: 80px !important;
+  }
+
+  .TestimonialCard {
+    max-width: 240px !important;
+    min-height: 240px !important;
+    padding: 16px !important;
+  }
+
+  .TestimonialCard h3 {
+    font-size: 16px !important;
+  }
+
+  .TestimonialCard span {
+    font-size: 12px !important;
+  }
+
+  .TestimonialCard p {
+    font-size: 13px !important;
+  }
+
+  /* Decorative balls */
+  .wrap-section:nth-child(8) img,
+  .wrap-section:nth-child(9) img {
+    width: 80px !important;
+  }
+
+  /* Feedback form */
+  .wrap-section:nth-child(10) {
+    padding: 20px 10px !important;
+  }
+
+  .wrap-section:nth-child(10) label:first-child {
+    font-size: 16px !important;
+  }
+
+  .wrap-section:nth-child(10) input:first-of-type {
+    width: 100% !important;
+    margin-left: 0 !important;
+    font-size: 13px !important;
+  }
+
+  .wrap-section:nth-child(10) input[type="text"],
+  .wrap-section:nth-child(10) input[type="email"] {
+    font-size: 13px !important;
+  }
+
+  .wrap-section:nth-child(10) button {
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* Footer */
+  .wrap-section:nth-child(10) iframe {
+    height: 200px !important;
+  }
+
+  .footer-medsos {
+    font-size: 18px !important;
+  }
+}
+
+/* ==================== EXTRA SMALL MOBILE (< 320px) ==================== */
+@media (max-width: 319px) {
+  /* Welcome section */
+  .wrap-section:nth-child(2) h2 {
+    font-size: 20px !important;
+  }
+
+  .wrap-section:nth-child(2) p {
+    font-size: 12px !important;
+  }
+
+  /* Noble game */
+  .wrap-section:nth-child(3) h1 {
+    font-size: 18px !important;
+  }
+
+  .wrap-section:nth-child(3) p {
+    font-size: 12px !important;
+  }
+
+  /* Promo */
+  .wrap-section.our-promo h2 {
+    font-size: 18px !important;
+  }
+
+  .wrap-section.our-promo span {
+    font-size: 13px !important;
+  }
+
+  /* Cards */
+  .card {
+    height: 260px !important;
+  }
+
+  .card h3 {
+    font-size: 14px !important;
+  }
+
+  .card p {
+    font-size: 11px !important;
+  }
+
+  /* Comments */
+  .wrap-section:nth-child(7) h1 {
+    font-size: 18px !important;
+  }
+
+  .TestimonialCard {
+    max-width: 220px !important;
+    min-height: 220px !important;
+    padding: 14px !important;
+  }
+}
+
+/* ==================== SWIPER RESPONSIVE OVERRIDES ==================== */
+@media (max-width: 768px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .swiper-slide {
+    filter: blur(1px) !important;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.02) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .swiper-button-prev-custom {
+    left: 10px !important;
+  }
+
+  .swiper-button-next-custom {
+    right: 10px !important;
+  }
+}
+
+/* ==================== UTILITY OVERRIDES ==================== */
+
+/* Force responsive images */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Prevent horizontal scroll */
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+/* Text responsive */
+@media (max-width: 767px) {
+  h1,
+  h2,
+  h3 {
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+  p {
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
 }
