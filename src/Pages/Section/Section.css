@@ -252,6 +252,11 @@
 
 /* mobile large responsive */
 @media (max-width: 575px) {
+  .rsvp-img {
+    margin-left: -10px;
+    width: 250px;
+    height: 120px;
+  }
   form {
     width: 40px;
     display: flex;
@@ -371,6 +376,7 @@
   }
   .rsvp-img {
     margin-left: -10px;
+    width: 200px;
   }
 
   /* Header */
@@ -517,7 +523,6 @@
   }
 }
 
-/* ==================== EXTRA SMALL MOBILE (< 320px) ==================== */
 @media (max-width: 319px) {
   /* Welcome section */
   .wrap-section:nth-child(2) h2 {
@@ -570,8 +575,6 @@
     padding: 14px !important;
   }
 }
-
-/* ==================== SWIPER RESPONSIVE OVERRIDES ==================== */
 @media (max-width: 768px) {
   .swiper-button-prev-custom,
   .swiper-button-next-custom {
@@ -603,8 +606,6 @@
     right: 10px !important;
   }
 }
-
-/* ==================== UTILITY OVERRIDES ==================== */
 
 /* Force responsive images */
 img {
@@ -726,7 +727,7 @@ body {
   background-color: #d8b200;
 }
 
-/* Feedback Form Responsive Styles */
+/* responsive feedback */
 @media (max-width: 767px) {
   .wrap-section:nth-child(10) {
     padding: 30px 15px !important;

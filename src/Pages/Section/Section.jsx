@@ -6,9 +6,6 @@ import redBall from "../../assets/red-ball.png";
 import stick from "../../assets/stik.png";
 import ourPromoBall1 from "../../assets/our-promo1.png";
 import ourPromoBall2 from "../../assets/our-promo2.png";
-// import card1Image from "../../assets/card1.png";
-// import card2Image from "../../assets/card2.png";
-// import card3Image from "../../assets/card3.png";
 
 import stickBall from "../../assets/stick-ball.png";
 
@@ -160,7 +157,7 @@ const SectionMain = () => {
       topColor: "#9C27B0",
       image: null, //
       title: "Tournament Area",
-      description: "Professional competition space",
+      description: "Professional ",
       buttonColor: "#FF9800",
     },
   ];
