@@ -1,4 +1,4 @@
-/* ==================== TABLET LANDSCAPE (768px - 991px) ==================== */
+/* tablet */
 @media (max-width: 991px) {
   /* Header section */
   .wrap-section:first-child {
@@ -16,7 +16,6 @@
     height: auto !important;
   }
 
-  /* Welcome section - stack vertically */
   .wrap-section:nth-child(2) {
     flex-direction: column !important;
     padding: 20px !important;
@@ -48,7 +47,6 @@
     margin-left: 0 !important;
   }
 
-  /* Stick and red ball positioning */
   .wrap-section:nth-child(2) .right-section img[src*="stik"] {
     margin-right: -100px !important;
     max-width: 300px !important;
@@ -111,18 +109,16 @@
   }
 }
 
-/* ==================== TABLET PORTRAIT (576px - 767px) ==================== */
+/* tablet potrait */
 @media (max-width: 767px) {
   .wrap-section {
     padding: 0 15px !important;
   }
-  /* Header images smaller */
   .left-section img,
   .right-section img {
     max-width: 120px !important;
   }
 
-  /* Welcome section */
   .wrap-section:nth-child(2) h2 {
     font-size: 32px !important;
     line-height: 1.2 !important;
@@ -150,7 +146,6 @@
     margin-left: 120px !important;
   }
 
-  /* Noble game section */
   .wrap-section:nth-child(3) h1 {
     font-size: 28px !important;
     line-height: 1.2 !important;
@@ -160,7 +155,6 @@
     font-size: 16px !important;
   }
 
-  /* Promo section */
   .wrap-section.our-promo img {
     width: 100px !important;
     height: 95px !important;
@@ -174,7 +168,6 @@
     font-size: 18px !important;
   }
 
-  /* Cards */
   .card {
     height: 320px !important;
   }
@@ -187,20 +180,17 @@
     font-size: 14px !important;
   }
 
-  /* Comments section */
   .wrap-section:nth-child(7) h1 {
     font-size: 26px !important;
     margin-top: 100px !important;
   }
 
-  /* Testimonial cards in swiper */
   .TestimonialCard {
     max-width: 280px !important;
     min-height: 280px !important;
     padding: 24px !important;
   }
 
-  /* Decorative balls */
   .wrap-section:nth-child(8) img,
   .wrap-section:nth-child(9) img {
     width: 120px !important;
@@ -227,7 +217,6 @@
     font-size: 14px !important;
   }
 
-  /* Form groups - stack vertically */
   .wrap-section:nth-child(10) div[style*="display: flex"] {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -261,14 +250,17 @@
   }
 }
 
-/* ==================== MOBILE LARGE (481px - 575px) ==================== */
+/* mobile large responsive */
 @media (max-width: 575px) {
-  /* testimonial card styling */
-  .TestimonialCard {
+  form {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  s .TestimonialCard {
     width: 450px;
     height: auto;
   }
-  /* Welcome section */
   .wrap-section:nth-child(2) h2 {
     font-size: 28px !important;
   }
@@ -362,7 +354,7 @@
   }
 }
 
-/* ==================== MOBILE SMALL (320px - 480px) ==================== */
+/* mobile small */
 @media (max-width: 480px) {
   .TestimonialCard {
     width: 250px;
@@ -641,5 +633,157 @@ body {
   p {
     word-wrap: break-word !important;
     hyphens: auto !important;
+  }
+}
+
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(249, 204, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.feedback-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.feedback-form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.feedback-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.feedback-form textarea {
+  resize: vertical;
+}
+
+.feedback-form .rating {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.feedback-form .rating span {
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0 4px;
+  color: #ccc;
+  transition: color 0.2s ease;
+}
+
+.feedback-form .rating span.hover,
+.feedback-form .rating span.active {
+  color: #f9cc00;
+}
+
+.feedback-form button[type="submit"] {
+  background-color: #f9cc00;
+  color: #000;
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-form button[type="submit"]:hover {
+  background-color: #d8b200;
+}
+
+/* Feedback Form Responsive Styles */
+@media (max-width: 767px) {
+  .wrap-section:nth-child(10) {
+    padding: 30px 15px !important;
+  }
+
+  .wrap-section:nth-child(10) form {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .wrap-section:nth-child(10) label {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .wrap-section:nth-child(10) input {
+    width: 100% !important;
+    margin-left: 0 !important;
+    font-size: 14px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .wrap-section:nth-child(10) button {
+    width: 100% !important;
+    max-width: 200px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+
+  .wrap-section-footer {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .left-footer {
+    width: 100% !important;
+  }
+
+  .wrap-section-footer iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap-section:nth-child(10) label {
+    font-size: 14px !important;
+  }
+
+  .wrap-section:nth-child(10) input {
+    font-size: 13px !important;
+  }
+
+  .wrap-section:nth-child(10) button {
+    font-size: 13px !important;
+    padding: 8px !important;
   }
 }
