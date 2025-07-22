@@ -17,16 +17,16 @@ const Navbar = () => {
         <img src={MyLogo} alt="Logo" className="logo-navbar" />
         <div className="nav_tabs">
           <a href="#home" className="tab">
-            Home
+            HOME
           </a>
           <a href="#about" className="tab">
-            About
+            RESERVATION
           </a>
           <a href="#menu" className="tab">
-            Menu
+            MENU
           </a>
           <a href="#contact" className="tab">
-            Contact
+            FAQS
           </a>
         </div>
         <div className="menu_btn" onClick={toggleMenu}>

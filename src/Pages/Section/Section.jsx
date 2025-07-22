@@ -2,24 +2,17 @@
 import rsvpLogo from "../../assets/rsvp.png";
 import rightBall from "../../assets/right-ball.png";
 import blueBall from "../../assets/blue-ball.png";
-import redBall from "../../assets/red-ball.png";
-import stick from "../../assets/stik.png";
 import ourPromoBall1 from "../../assets/our-promo1.png";
 import ourPromoBall2 from "../../assets/our-promo2.png";
-
 import stickBall from "../../assets/stick-ball.png";
-
 import "./Section.css";
-
 import yellowBall from "../../assets/yellow-ball.png";
 import redRightBall from "../../assets/red-right-ball.png";
-
 import { testimonial } from "../../data.js";
 import LogoFooter from "../../assets/logo.png";
-
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import gapBottom from "../../assets/gap.png";
-
-// library swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -27,11 +20,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Section.css";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 
 const SectionMain = () => {
-  // Update TestimonialCard component untuk efek yang lebih baik
   const TestimonialCard = ({ name, date, description }) => {
     return (
       <div
@@ -55,7 +45,6 @@ const SectionMain = () => {
           border: "1px solid rgba(255, 255, 255, 0.2)",
         }}
       >
-        {/* Gradient background overlay */}
         <div
           style={{
             position: "absolute",
@@ -66,8 +55,6 @@ const SectionMain = () => {
             background: "linear-gradient(90deg, #FFD700, #FFA500, #FFD700)",
           }}
         />
-
-        {/* Icon avatar dengan efek glow */}
         <div
           style={{
             width: 56,
@@ -92,8 +79,6 @@ const SectionMain = () => {
             <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
           </svg>
         </div>
-
-        {/* Nama dengan style yang lebih menarik */}
         <h3
           style={{
             margin: 0,
@@ -117,7 +102,6 @@ const SectionMain = () => {
           {date}
         </span>
 
-        {/* Deskripsi dengan line-height yang lebih baik */}
         <p
           style={{
             fontSize: 15,
@@ -229,7 +213,6 @@ const SectionMain = () => {
       `}</style>
 
       <section id="section-main">
-        {/* Header */}
         <div
           className="wrap-section"
           style={{
@@ -239,7 +222,18 @@ const SectionMain = () => {
           }}
         >
           <div className="left-section rsvp-img">
-            <img src={rsvpLogo} alt="" className="rsvp-img" />
+            <a
+              href="https://wa.me/6282181340616" // Ganti dengan nomor WhatsApp yang valid
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={rsvpLogo}
+                alt="Hubungi Kami via WhatsApp"
+                className="rsvp-img"
+                style={{ cursor: "pointer" }} // Menunjukkan bahwa gambar bisa diklik
+              />
+            </a>
           </div>
           <div className="right-section">
             <img
@@ -250,8 +244,6 @@ const SectionMain = () => {
             />
           </div>
         </div>
-
-        {/* Welcome Section */}
         <div
           className="wrap-section"
           style={{
@@ -322,7 +314,6 @@ const SectionMain = () => {
           </div>
         </div>
 
-        {/* Noble Game Section */}
         <div className="wrap-section" style={{ marginTop: 99 }}>
           <div className="right-section">
             <h1
@@ -585,7 +576,6 @@ const SectionMain = () => {
             ))}
           </Swiper>
 
-          {/* Custom Navigation Buttons */}
           <div
             className="swiper-button-prev-custom"
             style={{
@@ -638,7 +628,6 @@ const SectionMain = () => {
             </svg>
           </div>
 
-          {/* Custom Pagination */}
           <div
             className="swiper-pagination-custom"
             style={{
@@ -685,7 +674,7 @@ const SectionMain = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            padding: "50px 20px", // Ubah padding untuk mobile
+            padding: "50px 20px",
           }}
         >
           <form
@@ -693,8 +682,8 @@ const SectionMain = () => {
             style={{
               width: "100%",
               maxWidth: 800,
-              margin: "0 auto", // Center form
-              padding: "0 15px", // Tambahkan padding untuk mobile
+              margin: "0 auto",
+              padding: "55px 15px",
             }}
           >
             <div
@@ -832,8 +821,90 @@ const SectionMain = () => {
               </div>
             </div>
           </form>
-          {/* Bagian footer tetap sama */}
-          ...
+          <div
+            className="wrap-section-footer"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "100%",
+              marginTop: "50px",
+              gap: "30px",
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                minWidth: "300px",
+                padding: "0 15px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "19px",
+                  marginBottom: "15px",
+                }}
+              >
+                <p style={{ color: "white", margin: 0 }}>
+                  On the 2nd floor of{" "}
+                </p>
+                <img
+                  src={LogoFooter}
+                  style={{
+                    width: 30,
+                    height: 30,
+                  }}
+                  alt="Logo"
+                />
+              </div>
+
+              <div style={{ marginBottom: "20px" }}>
+                <p style={{ color: "white", margin: 0, lineHeight: "1.5" }}>
+                  Jl. Sei Serayu No.93/95, Babura Sunggal, Kec. Medan Sunggal,
+                  Kota Medan, Sumatera Utara 20154
+                </p>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: 15,
+                  color: "white",
+                  fontSize: "20px",
+                }}
+              >
+                <FaLocationDot />
+                <FaWhatsapp />
+                <FaInstagram />
+              </div>
+            </div>
+
+            {/* Google Maps */}
+            <div
+              style={{
+                flex: 1,
+                minWidth: "300px",
+                padding: "0 15px",
+                height: "300px",
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.815666852555!2d98.6451431!3d3.5772154999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fed625b2493%3A0xc23df6a616b93f95!2sKINI%20SOCIAL%20CLUB!5e1!3m2!1sid!2sid!4v1749574487369!5m2!1sid!2sid"
+                referrerPolicy="no-referrer"
+                style={{
+                  border: "none",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "8px",
+                  minHeight: "250px",
+                }}
+                title="Location Map"
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
         </div>
         <div className="gap-wrapper">
           <img src={gapBottom} alt="gap" className="gap-img" />
