@@ -1,0 +1,137 @@
+.container-booking {
+  margin: 100px 49px;
+}
+
+.header-booking {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 190px;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.booking-heading {
+  margin-bottom: 46px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.booking-btn {
+  border: 7px solid #fc0;
+  width: 151px;
+  height: 44px;
+  color: #fc0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.content-booking-section {
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.content-booking-section.left .image-booking-wrap {
+  margin-right: 20px;
+}
+
+.content-booking-section.right .image-booking-wrap {
+  margin-left: 20px;
+}
+
+.desc-booking {
+  box-shadow: 10px 4px 4px 10px rgba(0, 0, 0, 1);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  max-width: none;
+  flex: 1;
+  word-break: break-word;
+}
+
+.image-booking-wrap img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.service-section-booking {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-section-booking h2 {
+  color: white;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.service-btn {
+  width: 206px;
+  height: 87px;
+  border: 5px solid gold;
+  color: gold;
+  background: transparent;
+  margin: 50px 0;
+  font-size: 27px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.service-section-booking p {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .header-booking {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-booking-section {
+    flex-direction: column;
+  }
+
+  .content-booking-section.right,
+  .content-booking-section.left {
+    flex-direction: column;
+  }
+
+  .image-booking-wrap img {
+    max-width: 100%;
+  }
+
+  .desc-booking {
+    margin-top: 20px;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .service-section-booking h2 {
+    font-size: 28px;
+  }
+
+  .service-btn {
+    width: 160px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .service-section-booking p {
+    font-size: 18px;
+  }
+}

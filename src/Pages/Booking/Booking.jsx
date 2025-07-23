@@ -1,159 +1,89 @@
 import React from "react";
-import BgBooking from "../../assets/bg-booking.png";
+import "./Booking.css";
+
+const poolData = [
+  {
+    title: "POOL 1",
+    desc: "4 Lounge sofa tables can fit up to 7 people with minimum spend 300k after 6pm for food and drinks per hour. Billiards is charged usual rate of 100K++ per hour not including tax. ",
+    image: "https://placehold.co/600x400",
+  },
+  {
+    title: "POOL 2",
+    desc: "4 Lounge sofa tables can fit up to 7 people with minimum spend 300k after 6pm for food and drinks per hour. Billiards is charged usual rate of 100K++ per hour not including tax. ",
+    image: "https://placehold.co/600x400",
+  },
+  {
+    title: "POOL 3",
+    desc: "3 Classic tables suited for 2 person with no minimun spend before 6pm and 200K after 6pm for food and drinks. Billiards is charged usual rate of 100K++ per hour not including tax.",
+    image: "https://placehold.co/600x400",
+  },
+  {
+    title: "POOL 4",
+    desc: "4 Lounge sofa tables can fit up to 7 people with minimum spend 300k after 6pm for food and drinks per hour. Billiards is charged usual rate of 100K++ per hour not including tax. ",
+    image: "https://placehold.co/600x400",
+  },
+];
+
 const Booking = () => {
   return (
-    <div style={{ margin: "100px 49px" }} className="container-booking">
-      <div
-        className="header-booking"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          marginBottom: "190px",
-        }}
-      >
+    <div className="container-booking">
+      <div className="header-booking">
         <div className="image-header-booking">
-          <img
-            style={{ width: "500px", height: "300px" }}
-            src="https://placehold.co/600x400"
-          />
+          <img src="https://placehold.co/600x400" alt="Header" />
         </div>
-        <div
-          className="text-header-booking"
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-            margin: "0 100px",
-          }}
-        >
-          <p
-            style={{
-              marginBottom: "46px",
-              color: "white",
-              color: "white",
-              textAlign: "center",
-              fontSize: "24px",
-              fontWeight: "bold",
-            }}
-          >
+        <div className="text-header-booking">
+          <p className="booking-heading">
             Join Us in a Game, or Table Booking Options
           </p>
           <button
+            className="booking-btn"
             style={{
-              border: "7px solid #FC0",
-              width: "151px",
-              height: "44px",
-              color: "#FC0",
+              margin: "0 auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             BOOK NOW
           </button>
         </div>
       </div>
-      <div
-        className="content-booking-left"
-        style={{ display: "flex", flexDirection: "row", padding: "0 15px" }}
-      >
-        <div className="image-booking-wrap">
-          <img src="https://placehold.co/600x400" />
-        </div>
+
+      {poolData.map((pool, idx) => (
         <div
-          style={{
-            boxShadow: "10px 4px 4px 10px rgba(0, 0, 0, 1)",
-            color: "white",
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
+          key={idx}
+          className={`content-booking-section ${
+            idx % 2 === 0 ? "left" : "right"
+          }`}
         >
-          <h2>POOL 1</h2>
-          <p>
-            4 Lounge sofa tables can fit up to 7 people with minimum spend 300k
-            after 6pm for food and drinks per hour. Billiards is charged usual
-            rate of 100K++ per hour not including tax. 
-          </p>
+          {idx % 2 === 0 ? (
+            <>
+              <div className="image-booking-wrap">
+                <img src={pool.image} alt={pool.title} />
+              </div>
+              <div className="desc-booking">
+                <h2>{pool.title}</h2>
+                <p>{pool.desc}</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="desc-booking">
+                <h2>{pool.title}</h2>
+                <p>{pool.desc}</p>
+              </div>
+              <div className="image-booking-wrap">
+                <img src={pool.image} alt={pool.title} />
+              </div>
+            </>
+          )}
         </div>
-      </div>
-      <div
-        className="content-booking-left"
-        style={{ display: "flex", flexDirection: "row", padding: "0 15px" }}
-      >
-        <div className="image-booking-wrap">
-          <img src="https://placehold.co/600x400" />
-        </div>
-        <div
-          style={{
-            boxShadow: "10px 4px 4px 10px rgba(0, 0, 0, 1)",
-            color: "white",
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <h2>POOL 1</h2>
-          <p>
-            4 Lounge sofa tables can fit up to 7 people with minimum spend 300k
-            after 6pm for food and drinks per hour. Billiards is charged usual
-            rate of 100K++ per hour not including tax. 
-          </p>
-        </div>
-      </div>
-      <div
-        className="content-booking-left"
-        style={{ display: "flex", flexDirection: "row", padding: "0 15px" }}
-      >
-        <div className="image-booking-wrap">
-          <img src="https://placehold.co/600x400" />
-        </div>
-        <div
-          style={{
-            boxShadow: "10px 4px 4px 10px rgba(0, 0, 0, 1)",
-            color: "white",
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <h2>POOL 1</h2>
-          <p>
-            4 Lounge sofa tables can fit up to 7 people with minimum spend 300k
-            after 6pm for food and drinks per hour. Billiards is charged usual
-            rate of 100K++ per hour not including tax. 
-          </p>
-        </div>
-      </div>
-      <div
-        className="content-booking-left"
-        style={{ display: "flex", flexDirection: "row", padding: "0 15px" }}
-      >
-        <div className="image-booking-wrap">
-          <img src="https://placehold.co/600x400" />
-        </div>
-        <div
-          style={{
-            boxShadow: "10px 4px 4px 10px rgba(0, 0, 0, 1)",
-            color: "white",
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <h2>POOL 1</h2>
-          <p>
-            4 Lounge sofa tables can fit up to 7 people with minimum spend 300k
-            after 6pm for food and drinks per hour. Billiards is charged usual
-            rate of 100K++ per hour not including tax. 
-          </p>
-        </div>
+      ))}
+
+      <div className="service-section-booking">
+        <h2>Enjoy Our Service</h2>
+        <button className="service-btn">More</button>
+        <p>@2025 8Pool Billiard Medan</p>
       </div>
     </div>
   );

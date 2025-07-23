@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import MyLogo from "../../assets/logo.png";
 
@@ -9,6 +10,11 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const activeStyle = {
+    color: "yellow",
+    fontWeight: "bold",
+  };
+
   return (
     <>
       {menuOpen && <div className="sidebar_overlay" onClick={toggleMenu}></div>}
@@ -16,16 +22,24 @@ const Navbar = () => {
       <nav className="navbar">
         <img src={MyLogo} alt="Logo" className="logo-navbar" />
         <div className="nav_tabs">
-          <a href="#home" className="tab">
+          <NavLink
+            to="/"
+            className="tab"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             HOME
-          </a>
-          <a href="#about" className="tab">
-            RESERVATION
-          </a>
+          </NavLink>
+          <NavLink
+            to="/booking"
+            className="tab"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            BOOKING
+          </NavLink>
           <a href="#menu" className="tab">
             MENU
           </a>
-          <a href="#contact" className="tab">
+          <a href="#faqs" className="tab">
             FAQS
           </a>
         </div>
@@ -38,17 +52,27 @@ const Navbar = () => {
         <div className="cancel_btn" onClick={toggleMenu}>
           ✕
         </div>
-        <a href="#home" className="tab">
-          Home
+        <NavLink
+          to="/"
+          className="tab"
+          onClick={toggleMenu}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          HOME
+        </NavLink>
+        <NavLink
+          to="/booking"
+          className="tab"
+          onClick={toggleMenu}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          BOOKING
+        </NavLink>
+        <a href="#menu" className="tab" onClick={toggleMenu}>
+          MENU
         </a>
-        <a href="#about" className="tab">
-          About
-        </a>
-        <a href="#menu" className="tab">
-          Menu
-        </a>
-        <a href="#contact" className="tab">
-          Contact
+        <a href="#contact" className="tab" onClick={toggleMenu}>
+          CONTACT
         </a>
       </div>
     </>
