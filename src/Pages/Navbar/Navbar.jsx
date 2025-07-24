@@ -36,12 +36,27 @@ const Navbar = () => {
           >
             BOOKING
           </NavLink>
-          <a href="#menu" className="tab">
-            MENU
-          </a>
-          <a href="#faqs" className="tab">
-            FAQS
-          </a>
+          <NavLink
+            to="/menu"
+            className="tab"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Menu
+          </NavLink>
+          <NavLink
+            to="/faqs"
+            className="tab"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Faqs
+          </NavLink>
+          <NavLink
+            to="/ourservice"
+            className="tab"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            OurService
+          </NavLink>
         </div>
         <div className="menu_btn" onClick={toggleMenu}>
           ☰
@@ -68,12 +83,30 @@ const Navbar = () => {
         >
           BOOKING
         </NavLink>
-        <a href="#menu" className="tab" onClick={toggleMenu}>
-          MENU
-        </a>
-        <a href="#contact" className="tab" onClick={toggleMenu}>
-          CONTACT
-        </a>
+        <NavLink
+          to="/menu"
+          className="tab"
+          onClick={toggleMenu}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          Menu
+        </NavLink>
+        <NavLink
+          to="/faqs"
+          className="tab"
+          onClick={toggleMenu}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          Faqs
+        </NavLink>
+        <NavLink
+          to="/ourservice"
+          className="tab"
+          onClick={toggleMenu}
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          OurService
+        </NavLink>
       </div>
     </>
   );
