@@ -7,6 +7,7 @@ import Booking from "./Pages/Booking/Booking";
 import Menu from "./Pages/menu/Menu";
 import Faqs from "./Pages/Faqs/Faqs";
 import Service from "./Pages/Service/Service";
+import "./utils/scroolfix";
 function App() {
   return (
     <>

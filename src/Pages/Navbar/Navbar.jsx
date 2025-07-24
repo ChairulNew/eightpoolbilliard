@@ -1,13 +1,25 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import MyLogo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleNavClick = () => {
+    setMenuOpen(false);
+    // Additional scroll to top for immediate effect
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const activeStyle = {
@@ -25,6 +37,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className="tab"
+            onClick={handleNavClick}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             HOME
@@ -32,6 +45,7 @@ const Navbar = () => {
           <NavLink
             to="/booking"
             className="tab"
+            onClick={handleNavClick}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             BOOKING
@@ -39,6 +53,7 @@ const Navbar = () => {
           <NavLink
             to="/menu"
             className="tab"
+            onClick={handleNavClick}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Menu
@@ -46,6 +61,7 @@ const Navbar = () => {
           <NavLink
             to="/faqs"
             className="tab"
+            onClick={handleNavClick}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Faqs
@@ -53,6 +69,7 @@ const Navbar = () => {
           <NavLink
             to="/ourservice"
             className="tab"
+            onClick={handleNavClick}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             OurService
@@ -70,7 +87,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className="tab"
-          onClick={toggleMenu}
+          onClick={handleNavClick}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           HOME
@@ -78,7 +95,7 @@ const Navbar = () => {
         <NavLink
           to="/booking"
           className="tab"
-          onClick={toggleMenu}
+          onClick={handleNavClick}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           BOOKING
@@ -86,7 +103,7 @@ const Navbar = () => {
         <NavLink
           to="/menu"
           className="tab"
-          onClick={toggleMenu}
+          onClick={handleNavClick}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Menu
@@ -94,7 +111,7 @@ const Navbar = () => {
         <NavLink
           to="/faqs"
           className="tab"
-          onClick={toggleMenu}
+          onClick={handleNavClick}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Faqs
@@ -102,7 +119,7 @@ const Navbar = () => {
         <NavLink
           to="/ourservice"
           className="tab"
-          onClick={toggleMenu}
+          onClick={handleNavClick}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           OurService
